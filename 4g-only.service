@@ -1,0 +1,19 @@
+# Contents of /etc/systemd/system/4g-only.service
+[Unit]
+Description=4G Only Service
+After=network-online.target
+
+# Currently: simply enforces 4G only persistence, each boot (mitigate downgrade attacks used by false tower  malicious devices)
+# * WARNING: if you do not have reliable 4G cell service, '4g-only reset' command or systemctl stop 4g-only optionally allows 3G (prefering 4g).
+# This will force 4G only including each boot by default after detecting modem location
+[Service]
+#Type=simple
+ExecStartPre=/bin/sleep 30
+ExecStart=/usr/bin/4g-only
+ExecReload=/usr/bin/4g-only
+ExecStop=/usr/bin/4g-only reset
+Restart=on-failure
+RemainAfterExit=yes
+
+[Install]
+WantedBy=ModemManager.service
