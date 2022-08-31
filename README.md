@@ -1,14 +1,17 @@
 ### 4G-ONLY SERVICE (Mitigate Downgrade Attacks Used To Attack Phone Privacy)
 
-Written + tested on my (original model) Pinephone (should work with other Linux phones)
+Originally Shared On The Gitea Onion (Tor Browser Access):
+http://gg6zxtreajiijztyy5g6bt5o6l3qu32nrg7eulyemlhxwwl6enk6ghad.onion/RightToPrivacy/4g-Only
 
-*NOTE: This is a new script and will be looked at and may have additions added. Check back.*
+---
 
-##### ADDED UPDATE: Before this I noticed my phones being force downgraded to 2G (latest: when service was off, July 2022). Mostly during phone calls. Officially, 2G has been retired, and there is no need to allow 2G if you are in an area such as this. Further, if you have difficulty with phone calls with 4g-only enabled, try allowing 3G by:
+Written + tested on (original model) Pinephone (should work with other Linux phones)
+
+If you have difficulty with phone service with 4g-only enabled, try adding allowance for 3G by:
 
     systemctl stop 4g-only
 
-    OR:
+    OR COMMAND:
 
     4g-only reset
 
@@ -17,16 +20,14 @@ Written + tested on my (original model) Pinephone (should work with other Linux 
     'systemctl start 4g-only' AND simply '4g-only' commands will FORCE 
     ONLY 4G allowed for the modem and enable makes persistent for next boot.)
 
-Originally Shared On The Gitea Onion (Tor Browser Access):
-http://gg6zxtreajiijztyy5g6bt5o6l3qu32nrg7eulyemlhxwwl6enk6ghad.onion/RightToPrivacy/4g-Only
-
+---
 
 #### WHY?
 
-Many (ex: "stingray" style hardware) will attempt to downgrade services to 2g (shutdown in many areas), or more likely: 3g, in order to force your phone
-to connect to the false stronger signal.
+Many (ex: "stingray" style hardware) attempt to downgrade services to 2g (officially shutdown in many areas), forcing your phone
+to connect to potential false tower.
 
-Not only is this a major invasion of our privacy, service disruptions can come along with this.
+Not only a major invasion of privacy, service disruptions can come with this.
 
 With 4G only service / command, (by default) phone allows 4G ONLY (prevent downgrade attacks/IMSI). If you don't have reliable 4G at the time, try Issuing:
 
@@ -38,6 +39,7 @@ or, if not running as service, you can use the command:
 
 to change to: 4G preferred, 3G allowed (for those without 4G nearby, or as reliable)
 
+---
 
 #### INSTALL:
 
@@ -55,6 +57,7 @@ You can also manually start (after ./install) with:
 
 *To begin using the service immediately.*
 
+---
 
 #### USAGE:
 
@@ -73,9 +76,9 @@ You can also enable 3g as well by running:
 
 *What works best for you all depends on your surrounding service availability.*
 
-*4G only works best for my phone - there is no good reason for my service to be downgraded* 
+*4G only works best for my uses - no good reason for my service to be downgraded* 
 
-*(outside IMSI catcher downgrade attack).*
+---
 
 #### GET STARTED QUICK (INSTALL + START SERVICE IMMEDIATELY):
 
@@ -88,14 +91,11 @@ You can also enable 3g as well by running:
 
 This service is to mitigate downgrade attacks used by IMSI catcher operators.
 
-I have 4G in my area - leaving it enabled 24/7 works well for me.
-
+I have 4G in my area - leaving it enabled 24/7 works for me. Your area may be different.
 
 If you need 3G as well, you can use the above mentioned reset argument.
 
-
-
-
+---
 
 #### HOWTO: COMPLETELY DISABLE 4g-only.service (if not right for your area) -
 
